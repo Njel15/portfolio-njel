@@ -281,7 +281,6 @@
             top: -2px;
         }
 
-        /* Inline Instagram Buttons inside Timeline cards */
         .experience-links {
             display: flex;
             gap: 12px;
@@ -313,13 +312,13 @@
         .category-filter {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 10px 22px;
+            padding: 10px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
@@ -362,7 +361,7 @@
         /* Embed Container Dimensions */
         .embed-container-portrait {
             position: relative;
-            padding-bottom: 160%;
+            padding-bottom: 160%; /* Tegak Portrait */
             height: 0;
             overflow: hidden;
             background: #000;
@@ -370,7 +369,7 @@
 
         .embed-container-landscape {
             position: relative;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; /* Cinema 16:9 Landscape */
             height: 0;
             overflow: hidden;
             background: #000;
@@ -439,7 +438,6 @@
             margin: 0 auto 40px;
         }
 
-        /* 2x2 Grid Pill Container */
         .contact-grid-container {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 420px));
@@ -509,7 +507,6 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="logo">Angelica<span>.</span></a>
         <ul class="nav-links">
@@ -521,7 +518,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Showcase Section -->
     <section class="hero" id="home">
         <h1>Angelica <span>Lie</span></h1>
         <h2>Video Editor & Video Producer</h2>
@@ -533,7 +529,6 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
     <section id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-box">
@@ -549,12 +544,10 @@
         </div>
     </section>
 
-    <!-- ====== WORK EXPERIENCE TIMELINE ====== -->
     <section id="experience">
         <h2 class="section-title">My <span>Experience</span></h2>
         <div class="timeline">
             
-            <!-- Experience item 5: GMS Church Jakarta -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>JAN 2012</span>
@@ -572,7 +565,6 @@
                 </div>
             </div>
 
-            <!-- Experience item: Yord -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>JUL 2022</span>
@@ -593,7 +585,6 @@
                 </div>
             </div>
 
-            <!-- Experience item: RiNKU -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>JAN 2021</span>
@@ -612,7 +603,6 @@
                 </div>
             </div>
 
-            <!-- Experience item: Live Streaming -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>DEC 2020</span>
@@ -629,7 +619,6 @@
                 </div>
             </div>
 
-            <!-- Experience item: Biei Wedding -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>DEC 2017</span>
@@ -648,82 +637,236 @@
         </div>
     </section>
 
-    <!-- Portfolio Category Filters and Media Grid -->
     <section id="portfolio">
         <h2 class="section-title">My <span>Portfolio</span></h2>
 
         <div class="category-filter">
             <button class="filter-btn active" data-filter="all">All Works</button>
             <button class="filter-btn" data-filter="beauty">Beauty / FMCG</button>
+            <button class="filter-btn" data-filter="socialmedia">Social Media Video</button>
             <button class="filter-btn" data-filter="architecture">Architecture</button>
             <button class="filter-btn" data-filter="events">Events & Shorts</button>
+            <button class="filter-btn" data-filter="lot9">Lot 9 Restaurant</button>
             <button class="filter-btn" data-filter="gms">Video Director / Church</button>
             <button class="filter-btn" data-filter="longform">YouTube & Long Form</button>
         </div>
 
         <div class="portfolio-grid">
             
-            <!-- BEAUTY: CNF 1 -->
+            <div class="project-card" data-category="events">
+                <div class="embed-container-landscape">
+                    <iframe src="https://www.youtube.com/embed/reUjfdguJxw" title="RiNKU Compilation Works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">RiNKU Agency</span>
+                    <h3 class="project-title">RiNKU Compilation Works</h3>
+                    <p class="project-description">Comprehensive asset cut compilation showcase.</p>
+                </div>
+            </div>
+
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DC9B6WGhPBB/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
-                    <h3 class="project-title">FMCG Campaign Work 1</h3>
+                    <h3 class="project-title">CNF Campaign 1</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
-            <!-- BEAUTY: CNF 2 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C7TsJdnv1z8/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
-                    <h3 class="project-title">FMCG Campaign Work 2</h3>
+                    <h3 class="project-title">CNF Campaign 2</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
-            <!-- BEAUTY: CNF 3 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6V7hvPvmoZ/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
-                    <h3 class="project-title">FMCG Campaign Work 3</h3>
+                    <h3 class="project-title">CNF Campaign 3</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
-            <!-- BEAUTY: SIMPLE TREND 1 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DCjO_msBW09/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Simple Trend – Beauty</span>
-                    <h3 class="project-title">Social Content Showcase 1</h3>
-                    <p class="project-description">Optimized portrait visual storytelling for digital presence.</p>
+                    <h3 class="project-title">Simple Trend Content 1</h3>
                 </div>
             </div>
 
-            <!-- BEAUTY: SIMPLE TREND 2 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6Yim75PSKN/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Simple Trend – Beauty</span>
-                    <h3 class="project-title">Social Content Showcase 2</h3>
-                    <p class="project-description">High impact social pacing development.</p>
+                    <h3 class="project-title">Simple Trend Content 2</h3>
                 </div>
             </div>
 
-            <!-- ARCHITECTURE: ADDSTONE 1 -->
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/CvE3HXPBX2O/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Reel Cut 4</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/YOeTdKgkXW8" title="Beauty Short 1" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Beauty / FMCG</span>
+                    <h3 class="project-title">Beauty Short Showcase</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DINxfr4ho8b/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Flormar Indonesia</span>
+                    <h3 class="project-title">Flormar Production Reel 1</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/C84MTBhPIFO/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Custom Blend Reel</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/C1gguOHvZTG/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Lifestyle Cut</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/C_Upx-uPpZx/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Product Highlight</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/C2j11-jPljL/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Cosmetics Trim</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/C2yoxB4PyUS/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Fragrance Commercial</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DGcfGAjBEyb/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Flormar Indonesia</span>
+                    <h3 class="project-title">Flormar Winter Campaign</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="beauty">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/Cxc6STQBIW2/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">CNF Official</span>
+                    <h3 class="project-title">CNF Brand Identity Pack</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="socialmedia">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DF_1_-sPIy7/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Coffee Santino</span>
+                    <h3 class="project-title">Santino Coffee Reel 1</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="socialmedia">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/ChRBAtiB_9F/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Nupon ID</span>
+                    <h3 class="project-title">Nupon Kitchen Project 1</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="socialmedia">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/CihTXVJh-_L/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Nupon ID</span>
+                    <h3 class="project-title">Nupon Home Campaign 2</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="socialmedia">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DIis5yNpCDm/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Coffee Santino</span>
+                    <h3 class="project-title">Santino Roastery Spotlight</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="socialmedia">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DI3i6S8pLji/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Coffee Santino</span>
+                    <h3 class="project-title">Santino Brewing Feature</h3>
+                </div>
+            </div>
+
             <div class="project-card" data-category="architecture">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DMPQngJTl0O/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -735,7 +878,6 @@
                 </div>
             </div>
 
-            <!-- ARCHITECTURE: ADDSTONE 2 -->
             <div class="project-card" data-category="architecture">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C11GZPlPOBj/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -747,10 +889,9 @@
                 </div>
             </div>
 
-            <!-- EVENTS: PET+VET 1 -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
-                    <iframe src="https://www.youtube.com/embed/bExckmVJrKc" title="Pet+Vet 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/bExckmVJrKc" title="Pet+Vet 1" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Pet+Vet – IIPE</span>
@@ -759,10 +900,9 @@
                 </div>
             </div>
 
-            <!-- EVENTS: PET+VET 2 -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
-                    <iframe src="https://www.youtube.com/embed/Kb5YnBvzJWA" title="Pet+Vet 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Kb5YnBvzJWA" title="Pet+Vet 2" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Pet+Vet – IIPE</span>
@@ -771,7 +911,6 @@
                 </div>
             </div>
 
-            <!-- EVENTS: KIDS EVENT -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DStx93dkQjc/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -783,55 +922,126 @@
                 </div>
             </div>
 
-            <!-- EVENTS: RINKU COMPILATION -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
-                    <iframe src="https://www.youtube.com/embed/JW1u-tsIBxY" title="RiNKU Agency compilation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/OEmBLKVo-8M" title="Event Update 4" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">RiNKU Agency</span>
-                    <h3 class="project-title">Compilation Works (Short)</h3>
-                    <p class="project-description">Structural sequence cut assembly asset.</p>
+                    <span class="project-category">Live Production Event</span>
+                    <h3 class="project-title">Event Highlights Dynamic</h3>
                 </div>
             </div>
 
-            <!-- LONGFORM: WEDDING -->
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/JW1u-tsIBxY" title="Lot 9 - 1" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 1</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/kB3RtGjPaeg" title="Lot 9 - 2" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 2</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/S5xYOqG_E-4" title="Lot 9 - 3" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 3</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/k-fH53agg-8" title="Lot 9 - 4" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 4</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/FOANGNL-xwA" title="Lot 9 - 5" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 5</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/D1WwFMZzDS0" title="Lot 9 - 6" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 6</h3>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="lot9">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/-eu9994yHkA" title="Lot 9 - 7" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Lot 9 Restaurant</span>
+                    <h3 class="project-title">Culinary Project 7</h3>
+                </div>
+            </div>
+
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
-                    <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="Wedding Cinematic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="Wedding Cinematic" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Wedding – Yogo & Esther</span>
                     <h3 class="project-title">Wedding Cinematic Film</h3>
-                    <p class="project-description">Role: Freelance Shooter & Editor</p>
                 </div>
             </div>
 
-            <!-- LONGFORM: PODCAST -->
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
-                    <iframe src="https://www.youtube.com/embed/wrVWgoZoHCo?start=16" title="Studio Yord Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/wrVWgoZoHCo?start=16" title="Studio Yord Podcast" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Podcast – Studio Yord</span>
                     <h3 class="project-title">Long Form Talkshow Video</h3>
-                    <p class="project-description">Multi-camera panel pacing layout orchestration.</p>
                 </div>
             </div>
 
-            <!-- LONGFORM: A ROASTWORK -->
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
-                    <iframe src="https://www.youtube.com/embed/TFcC1uFq8yA" title="A Roastwork video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/TFcC1uFq8yA" title="A Roastwork video" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">A Roastwork</span>
                     <h3 class="project-title">Long Form Commercial Content</h3>
-                    <p class="project-description">High pacing sequencing focus.</p>
                 </div>
             </div>
 
-            <!-- FIXED: Moved GMS Church Video Director column to the VERY BOTTOM -->
+            <div class="project-card" data-category="longform">
+                <div class="embed-container-landscape">
+                    <iframe src="https://www.youtube.com/embed/tYrKRF76PZ0" title="Longform update 4" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">YouTube Features</span>
+                    <h3 class="project-title">Extended Cinematic Sequence</h3>
+                </div>
+            </div>
+
             <div class="project-card" data-category="gms">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.youtube.com/embed/zlNUVYR9qdA" title="Video Director at GMS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -846,13 +1056,11 @@
         </div>
     </section>
 
-    <!-- ====== CONTACT GRID SECTION ====== -->
     <section class="contact" id="contact">
         <h2>Let's Create Together</h2>
         <p>Interested in collaborating or building high-impact cinematic stories? Reach out directly to connect.</p>
         
         <div class="contact-grid-container">
-            <!-- PILL 1: WhatsApp -->
             <a href="https://wa.me/62818500015" target="_blank" class="contact-pill-box">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.46h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/>
@@ -860,7 +1068,6 @@
                 <span>0818 5000 15</span>
             </a>
 
-            <!-- PILL 2: Email -->
             <a href="mailto:hello.njel@gmail.com" class="contact-pill-box">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#E05320"/>
@@ -868,7 +1075,6 @@
                 <span>hello.njel@gmail.com</span>
             </a>
 
-            <!-- PILL 3: Instagram -->
             <a href="https://www.instagram.com/_njell/" target="_blank" class="contact-pill-box">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.75 2H16.25C19.4226 2 22 4.57738 22 7.75V16.25C22 19.4226 19.4226 22 16.25 22H7.75C4.57738 22 2 19.4226 2 16.25V7.75C2 4.57738 4.57738 2 7.75 2ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9ZM17.25 5.5C16.8358 5.5 16.5 5.83579 16.5 12.25C16.5 12.6642 16.8358 13 17.25 13C17.6642 13 18 12.6642 18 12.25C18 5.83579 17.6642 5.5 17.25 5.5Z" fill="#C13584"/>
@@ -876,7 +1082,6 @@
                 <span>Instagram (@_njell)</span>
             </a>
 
-            <!-- PILL 4: LinkedIn -->
             <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="contact-pill-box">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z" fill="#0077b5"/>
@@ -886,7 +1091,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2026 Angelica Lie. All rights reserved. | Professional Video Portfolio</p>
     </footer>
