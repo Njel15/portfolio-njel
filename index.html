@@ -161,7 +161,7 @@
             box-shadow: 0 10px 25px rgba(224, 83, 32, 0.25);
         }
 
-        /* Section Settings */
+        /* Section Global Settings */
         section {
             padding: 90px 50px;
             max-width: 1300px;
@@ -190,35 +190,16 @@
         }
 
         .about-text p {
-            font-size: 16px;
+            font-size: 16.5px;
             color: var(--text-muted);
             margin-bottom: 20px;
         }
 
-        .about-footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: flex-start;
+        .about-text p:last-child {
+            margin-bottom: 0;
         }
 
-        .btn-instagram-profile {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14.5px;
-            transition: color 0.3s;
-        }
-
-        .btn-instagram-profile:hover {
-            color: var(--accent);
-        }
-
-        /* ====== EXPERIENCE TIMELINE SECTION ====== */
+        /* Experience Timeline Section */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -300,7 +281,7 @@
             top: -2px;
         }
 
-        /* Inline Instagram Buttons for Experience Row */
+        /* Inline Instagram Buttons inside Timeline cards */
         .experience-links {
             display: flex;
             gap: 12px;
@@ -328,7 +309,7 @@
             background: #fff;
         }
 
-        /* Portfolio Filters */
+        /* Portfolio Section & Filters */
         .category-filter {
             display: flex;
             justify-content: center;
@@ -378,7 +359,7 @@
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
         }
 
-        /* Embed Configurations */
+        /* Embed Container Dimensions */
         .embed-container-portrait {
             position: relative;
             padding-bottom: 160%;
@@ -433,14 +414,14 @@
             color: var(--text-muted);
         }
 
-        /* ====== FIXED CONTACT SECTION (Screenshot 2026-06-02 at 17.26.52.png) ====== */
+        /* ====== CONTACT GRID SECTION ====== */
         .contact {
             text-align: center;
             padding: 90px 20px;
             background: var(--accent-light);
             border-radius: 24px;
             margin: 50px auto;
-            max-width: 1200px;
+            max-width: 1100px;
             border: 1px solid var(--border-color);
         }
 
@@ -448,68 +429,52 @@
             font-family: 'Playfair Display', serif;
             font-size: 42px;
             margin-bottom: 15px;
+            color: var(--text-dark);
         }
 
         .contact p {
             color: var(--text-muted);
             font-size: 17px;
             max-width: 600px;
-            margin: 0 auto 35px;
+            margin: 0 auto 40px;
         }
 
-        .contact-info-block {
-            display: flex;
-            justify-content: center;
+        /* 2x2 Grid Pill Container */
+        .contact-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 420px));
             gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .contact-pill {
+        .contact-pill-box {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             font-size: 15.5px;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
+            justify-content: flex-start;
+            gap: 14px;
+            padding: 16px 30px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 50px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
             transition: all 0.3s;
         }
 
-        .contact-pill:hover {
+        .contact-pill-box:hover {
             border-color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            padding: 12px 28px;
-            background: var(--bg-card);
-            border-radius: 50px;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--text-dark);
-            color: white;
-            border-color: var(--text-dark);
+        .contact-pill-box svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
         }
 
         /* Footer */
@@ -537,14 +502,14 @@
             .timeline-item { grid-template-columns: 1fr; gap: 10px; }
             .hero h1 { font-size: 40px; }
             .about-box { padding: 30px; }
-            .contact-info-block { flex-direction: column; align-items: center; gap: 12px; }
-            .contact-pill { width: 100%; max-width: 350px; justify-content: center; }
+            .contact-grid-container { grid-template-columns: 1fr; max-width: 380px; }
+            .contact-pill-box { justify-content: flex-start; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="logo">Angelica<span>.</span></a>
         <ul class="nav-links">
@@ -556,7 +521,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Showcase Section -->
     <section class="hero" id="home">
         <h1>Angelica <span>Lie</span></h1>
         <h2>Video Editor & Video Producer</h2>
@@ -568,17 +533,18 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Me Section -->
     <section id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-box">
             <div class="about-text">
-                <p>My background started in creating content for brands and products, handling shooting, editing, and shaping visuals that are engaging and suitable for digital platforms. Throughout my career journey, I have had the privilege to build and craft video narratives alongside dynamic creative environments like <strong>RiNKU Social Media Agency</strong> and <strong>Studio Yord</strong>.</p>
-                <p>From food that needs to look tempting on screen to brand campaigns that need clear messaging, I focus on storytelling that feels natural and relatable.</p>
-                <p>Over time, I expanded into live production, directing multi-camera setups, coordinating with sound, lighting, and internal team, and ensuring events run smoothly from rundown to final output. I’m used to working in fast-paced environments where timing, teamwork, and clear communication really matter.</p>
-            </div>
-            <div class="about-footer">
-                <a href="https://www.instagram.com/_njell/" target="_blank" class="btn-instagram-profile">📸 Follow me on Instagram: @_njell</a>
+                <p>Hi, I'm Angel.</p>
+                <p>A Video Director, Videographer, and Video Editor with more than 5 years of experience working with creative agencies, brands, events, weddings, and live productions.</p>
+                <p>For me, video is more than just beautiful visuals. Every project has a story, emotion, and purpose behind it. My role is to turn those moments into meaningful visual experiences that people can connect with.</p>
+                <p>Throughout my journey, I've been involved in various productions—from commercial content and corporate projects to weddings, church productions, and large-scale live events. I enjoy working closely with teams, developing creative concepts, directing shoots, and crafting stories through editing.</p>
+                <p>I believe that great content isn't only about how it looks, but how it makes people feel.</p>
+                <p>When I'm not behind the camera or editing timeline, I'm continuously learning new creative techniques, exploring storytelling, and helping teams create better visual content.</p>
+                <p>Let's create something meaningful together.</p>
             </div>
         </div>
     </section>
@@ -588,7 +554,7 @@
         <h2 class="section-title">My <span>Experience</span></h2>
         <div class="timeline">
             
-            <!-- Experience 4 (FIXED: Subtitle & Instagram channels matching requested spec) -->
+            <!-- Experience item: Yord -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>JUL 2022</span>
@@ -609,7 +575,7 @@
                 </div>
             </div>
 
-            <!-- Experience 3 (FIXED: rinku.id link insertion) -->
+            <!-- Experience item: RiNKU -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>JAN 2021</span>
@@ -628,7 +594,7 @@
                 </div>
             </div>
 
-            <!-- Experience 2 -->
+            <!-- Experience item: Live Streaming -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>DEC 2020</span>
@@ -645,7 +611,7 @@
                 </div>
             </div>
 
-            <!-- Experience 1 -->
+            <!-- Experience item: Biei Wedding -->
             <div class="timeline-item">
                 <div class="timeline-date">
                     <span>DEC 2017</span>
@@ -664,11 +630,10 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Category Filters and Media Grid -->
     <section id="portfolio">
         <h2 class="section-title">My <span>Portfolio</span></h2>
 
-        <!-- Filters Grid -->
         <div class="category-filter">
             <button class="filter-btn active" data-filter="all">All Works</button>
             <button class="filter-btn" data-filter="beauty">Beauty / FMCG</button>
@@ -679,7 +644,7 @@
 
         <div class="portfolio-grid">
             
-            <!-- ====== BEAUTY / FMCG (CNF) ====== -->
+            <!-- BEAUTY: CNF 1 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DC9B6WGhPBB/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -691,6 +656,7 @@
                 </div>
             </div>
 
+            <!-- BEAUTY: CNF 2 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C7TsJdnv1z8/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -702,6 +668,7 @@
                 </div>
             </div>
 
+            <!-- BEAUTY: CNF 3 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6V7hvPvmoZ/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -713,7 +680,7 @@
                 </div>
             </div>
 
-            <!-- ====== BEAUTY / FMCG (SIMPLE TREND) ====== -->
+            <!-- BEAUTY: SIMPLE TREND 1 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DCjO_msBW09/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -725,6 +692,7 @@
                 </div>
             </div>
 
+            <!-- BEAUTY: SIMPLE TREND 2 -->
             <div class="project-card" data-category="beauty">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6Yim75PSKN/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -736,7 +704,7 @@
                 </div>
             </div>
 
-            <!-- ====== ARCHITECTURE (ADDSTONE) ====== -->
+            <!-- ARCHITECTURE: ADDSTONE 1 -->
             <div class="project-card" data-category="architecture">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DMPQngJTl0O/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -748,6 +716,7 @@
                 </div>
             </div>
 
+            <!-- ARCHITECTURE: ADDSTONE 2 -->
             <div class="project-card" data-category="architecture">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C11GZPlPOBj/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -759,7 +728,7 @@
                 </div>
             </div>
 
-            <!-- ====== EVENTS & SHORTS ====== -->
+            <!-- EVENTS: PET+VET 1 -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.youtube.com/embed/bExckmVJrKc" title="Pet+Vet 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -771,6 +740,7 @@
                 </div>
             </div>
 
+            <!-- EVENTS: PET+VET 2 -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.youtube.com/embed/Kb5YnBvzJWA" title="Pet+Vet 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -782,6 +752,7 @@
                 </div>
             </div>
 
+            <!-- EVENTS: KIDS EVENT -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DStx93dkQjc/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
@@ -793,6 +764,7 @@
                 </div>
             </div>
 
+            <!-- EVENTS: RINKU COMPILATION -->
             <div class="project-card" data-category="events">
                 <div class="embed-container-portrait">
                     <iframe src="https://www.youtube.com/embed/JW1u-tsIBxY" title="RiNKU Agency compilation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -804,7 +776,7 @@
                 </div>
             </div>
 
-            <!-- ====== YOUTUBE & LONG FORM VIDEO (LANDSCAPE) ====== -->
+            <!-- LONGFORM: WEDDING -->
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
                     <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="Wedding Cinematic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -816,6 +788,7 @@
                 </div>
             </div>
 
+            <!-- LONGFORM: PODCAST -->
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
                     <iframe src="https://www.youtube.com/embed/wrVWgoZoHCo?start=16" title="Studio Yord Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -827,6 +800,7 @@
                 </div>
             </div>
 
+            <!-- LONGFORM: A ROASTWORK -->
             <div class="project-card" data-category="longform">
                 <div class="embed-container-landscape">
                     <iframe src="https://www.youtube.com/embed/TFcC1uFq8yA" title="A Roastwork video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -841,23 +815,43 @@
         </div>
     </section>
 
-    <!-- ====== CONTACT SECTION (MATCHING SCREENSHOT 17.26.52) ====== -->
+    <!-- ====== CONTACT GRID SECTION ====== -->
     <section class="contact" id="contact">
         <h2>Let's Create Together</h2>
         <p>Interested in collaborating or building high-impact cinematic stories? Reach out directly to connect.</p>
         
-        <div class="contact-info-block">
-            <a href="https://wa.me/62818500015" target="_blank" class="contact-pill">
-                <span>WhatsApp: 0818 5000 15</span>
+        <div class="contact-grid-container">
+            <!-- PILL 1: WhatsApp with vector icon -->
+            <a href="https://wa.me/62818500015" target="_blank" class="contact-pill-box">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.46h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/>
+                </svg>
+                <span>0818 5000 15</span>
             </a>
-            <a href="mailto:hello.njel@gmail.com" class="contact-pill">
-                <span>Email: hello.njel@gmail.com</span>
-            </a>
-        </div>
 
-        <div class="social-links">
-            <a href="https://www.instagram.com/_njell/" target="_blank" class="social-link">Instagram (@_njell)</a>
-            <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="social-link">LinkedIn Profile</a>
+            <!-- PILL 2: Email with vector icon -->
+            <a href="mailto:hello.njel@gmail.com" class="contact-pill-box">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#E05320"/>
+                </svg>
+                <span>hello.njel@gmail.com</span>
+            </a>
+
+            <!-- PILL 3: Instagram with vector icon -->
+            <a href="https://www.instagram.com/_njell/" target="_blank" class="contact-pill-box">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.75 2H16.25C19.4226 2 22 4.57738 22 7.75V16.25C22 19.4226 19.4226 22 16.25 22H7.75C4.57738 22 2 19.4226 2 16.25V7.75C2 4.57738 4.57738 2 7.75 2ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9ZM17.25 5.5C16.8358 5.5 16.5 5.83579 16.5 12.25C16.5 12.6642 16.8358 13 17.25 13C17.6642 13 18 12.6642 18 12.25C18 5.83579 17.6642 5.5 17.25 5.5Z" fill="#C13584"/>
+                </svg>
+                <span>Instagram (@_njell)</span>
+            </a>
+
+            <!-- PILL 4: LinkedIn with vector icon -->
+            <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="contact-pill-box">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z" fill="#0077b5"/>
+                </svg>
+                <span>LinkedIn Profile</span>
+            </a>
         </div>
     </section>
 
@@ -889,7 +883,7 @@
             });
         });
 
-        // Smooth Scrolling Anchor Links
+        // Smooth Scrolling Anchor
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
