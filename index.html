@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelica | Video Editor & Producer Portfolio</title>
+    <title>Angelica Lie | Video Editor & Producer</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,13 +13,13 @@
         }
 
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #111111;
-            --text-light: #f5f5f5;
-            --text-muted: #888888;
-            --accent: #ff6b35;
-            --accent-hover: #ff8c5a;
-            --gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --bg-light: #fbf7f4;        /* Krem lembut hangat */
+            --bg-card: #ffffff;         /* Putih bersih kontras */
+            --text-dark: #111111;       /* Teks utama gelap */
+            --text-muted: #555555;      /* Teks sekunder abu hangat */
+            --accent: #e05320;          /* Oranye terakota premium */
+            --accent-light: #fdf2ed;    /* Highlight lembut */
+            --border-color: #eae3de;    /* Garis pembatas tipis */
         }
 
         html {
@@ -28,9 +28,10 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
+            padding-top: 80px;
         }
 
         /* Navigation */
@@ -44,17 +45,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(251, 247, 244, 0.9);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #111;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--text-dark);
             text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         .nav-links {
@@ -64,7 +69,7 @@
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -79,112 +84,95 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(224, 83, 32, 0.05) 0%, transparent 70%);
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 10vw, 80px);
+            font-size: clamp(48px, 9vw, 76px);
             font-weight: 700;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
+            color: var(--text-dark);
+            margin-bottom: 15px;
         }
 
         .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent);
         }
 
         .hero h2 {
-            font-size: clamp(14px, 2.5vw, 20px);
-            font-weight: 300;
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-weight: 400;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             letter-spacing: 6px;
             text-transform: uppercase;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.2s forwards;
         }
 
         .hero p {
-            max-width: 700px;
-            font-size: 16px;
+            max-width: 750px;
+            font-size: 17px;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.4s forwards;
+            margin-bottom: 45px;
         }
 
-        .cta-button {
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-linkedin {
             display: inline-block;
-            padding: 15px 40px;
-            background: var(--gradient);
+            padding: 15px 35px;
+            background: #0077b5;
             color: white;
             text-decoration: none;
             font-weight: 600;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
         }
 
-        .cta-button:hover {
+        .btn-linkedin:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 119, 181, 0.2);
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator span {
-            display: block;
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--accent);
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .scroll-indicator span::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
+        .btn-work {
+            display: inline-block;
+            padding: 15px 35px;
             background: var(--accent);
-            border-radius: 50%;
-            animation: scrollDot 1.5s infinite;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* Section Styling */
+        .btn-work:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(224, 83, 32, 0.25);
+        }
+
+        /* Section Settings */
         section {
-            padding: 100px 50px;
-            max-width: 1400px;
+            padding: 90px 50px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 700;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
@@ -193,20 +181,12 @@
         }
 
         /* About Section */
-        .about {
+        .about-box {
             background: var(--bg-card);
             border-radius: 20px;
-            padding: 60px;
-            margin: 50px auto;
-            max-width: 1200px;
-            border: 1px solid #1a1a1a;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            padding: 50px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
         .about-text p {
@@ -215,37 +195,170 @@
             margin-bottom: 20px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .about-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .skill-item {
-            background: var(--bg-dark);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #222;
-            transition: border-color 0.3s, transform 0.3s;
+        .btn-instagram-profile {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14.5px;
+            transition: color 0.3s;
         }
 
-        .skill-item:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .skill-item h4 {
+        .btn-instagram-profile:hover {
             color: var(--accent);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
-        /* Portfolio Section & Video Players */
+        /* ====== EXPERIENCE TIMELINE SECTION ====== */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            border-color: var(--accent);
+        }
+
+        .timeline-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .timeline-date .end-date {
+            color: var(--text-dark);
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        .timeline-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .timeline-info h4 {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-info ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .timeline-info ul li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-info ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Inline Instagram Buttons for Experience Row */
+        .experience-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-experience-ig {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 12.5px;
+            font-weight: 500;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .btn-experience-ig:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: #fff;
+        }
+
+        /* Portfolio Filters */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 22px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 30px;
         }
 
@@ -253,7 +366,8 @@
             background: var(--bg-card);
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
@@ -261,27 +375,27 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
         }
 
-        /* Responsive Player Container 16:9 & 9:16 Shorts */
-        .embed-container {
+        /* Embed Configurations */
+        .embed-container-portrait {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 160%;
             height: 0;
             overflow: hidden;
             background: #000;
         }
 
-        .embed-container-shorts {
+        .embed-container-landscape {
             position: relative;
-            padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             background: #000;
         }
 
-        .embed-container iframe, .embed-container-shorts iframe {
+        .embed-container-portrait iframe, .embed-container-landscape iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -291,7 +405,7 @@
         }
 
         .project-info {
-            padding: 25px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -303,519 +417,457 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: block;
         }
 
         .project-title {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--text-light);
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: var(--text-dark);
         }
 
         .project-description {
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-muted);
-            margin-bottom: 15px;
         }
 
-        .ig-channel-box {
-            background: #161616;
-            padding: 50px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            min-height: 230px;
-        }
-
-        .ig-channel-btn {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 13px;
-            margin-top: 15px;
-            transition: opacity 0.3s;
-        }
-
-        .ig-channel-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Category Filter */
-        .category-filter {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 10px 22px;
-            background: transparent;
-            border: 1px solid #222;
-            color: var(--text-muted);
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: all 0.3s;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--gradient);
-            border-color: transparent;
-            color: white;
-        }
-
-        /* Experience Section */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .experience-card {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: 16px;
-            border-left: 4px solid var(--accent);
-            border-top: 1px solid #1a1a1a;
-            border-right: 1px solid #1a1a1a;
-            border-bottom: 1px solid #1a1a1a;
-            transition: transform 0.3s;
-        }
-
-        .experience-card:hover {
-            transform: translateX(10px);
-        }
-
-        .experience-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .experience-card h4 {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 400;
-            margin-bottom: 15px;
-        }
-
-        .experience-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* Contact Section */
+        /* ====== FIXED CONTACT SECTION (Screenshot 2026-06-02 at 17.26.52.png) ====== */
         .contact {
             text-align: center;
-            padding: 100px 20px;
-            background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            padding: 90px 20px;
+            background: var(--accent-light);
+            border-radius: 24px;
+            margin: 50px auto;
+            max-width: 1200px;
+            border: 1px solid var(--border-color);
         }
 
         .contact h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 42px;
+            margin-bottom: 15px;
         }
 
         .contact p {
             color: var(--text-muted);
-            font-size: 18px;
+            font-size: 17px;
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 35px;
+        }
+
+        .contact-info-block {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .contact-pill {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+            transition: all 0.3s;
+        }
+
+        .contact-pill:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .social-link {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 12px 28px;
             background: var(--bg-card);
-            border-radius: 50%;
-            color: var(--text-light);
+            border-radius: 50px;
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border: 1px solid #222;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
             transition: all 0.3s;
         }
 
         .social-link:hover {
-            background: var(--gradient);
-            border-color: transparent;
-            transform: translateY(-5px);
+            background: var(--text-dark);
+            color: white;
+            border-color: var(--text-dark);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px;
-            border-top: 1px solid #111;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
         }
 
         footer p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13.5px;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-15px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-7px);
-            }
-        }
-
-        @keyframes scrollDot {
-            0% {
-                opacity: 1;
-                top: 10px;
-            }
-            100% {
-                opacity: 0;
-                top: 30px;
-            }
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+            section { padding: 60px 20px; }
+            .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+            .hero h1 { font-size: 40px; }
+            .about-box { padding: 30px; }
+            .contact-info-block { flex-direction: column; align-items: center; gap: 12px; }
+            .contact-pill { width: 100%; max-width: 350px; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <a href="#home" class="logo">Angelica.</a>
+        <a href="#home" class="logo">Angelica<span>.</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>Angelica <span>Lie</span></h1>
         <h2>Video Editor & Video Producer</h2>
         <p>I work in video production across social media and live events. I enjoy turning ideas and real moments into visuals that feel intentional, well-executed, and meaningful.</p>
-        <a href="#portfolio" class="cta-button">View My Work</a>
-        <div class="scroll-indicator">
-            <span></span>
+        
+        <div class="hero-buttons">
+            <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="btn-linkedin">LinkedIn Profile</a>
+            <a href="#portfolio" class="btn-work">View My Work</a>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About <span>Me</span></h2>
-        <div class="about">
-            <div class="about-content">
-                <div class="about-text">
-                    <p>My background started in creating content for brands and products, handling shooting, editing, and shaping visuals that are engaging and suitable for digital platforms. From food that needs to look tempting on screen to brand campaigns that need clear messaging, I focus on storytelling that feels natural and relatable.</p>
-                    <p>Over time, I expanded into live production, directing multi-camera setups, coordinating with sound, lighting, and internal team, and ensuring events run smoothly from rundown to final output. I’m used to working in fast-paced environments where timing, teamwork, and clear communication really matter.</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-item"><h4>Video Editing</h4></div>
-                    <div class="skill-item"><h4>Live Production</h4></div>
-                    <div class="skill-item"><h4>Multi-Cam Directing</h4></div>
-                    <div class="skill-item"><h4>Storytelling</h4></div>
-                    <div class="skill-item"><h4>Shooting & Camera</h4></div>
-                    <div class="skill-item"><h4>Social Content</h4></div>
-                </div>
+        <div class="about-box">
+            <div class="about-text">
+                <p>My background started in creating content for brands and products, handling shooting, editing, and shaping visuals that are engaging and suitable for digital platforms. Throughout my career journey, I have had the privilege to build and craft video narratives alongside dynamic creative environments like <strong>RiNKU Social Media Agency</strong> and <strong>Studio Yord</strong>.</p>
+                <p>From food that needs to look tempting on screen to brand campaigns that need clear messaging, I focus on storytelling that feels natural and relatable.</p>
+                <p>Over time, I expanded into live production, directing multi-camera setups, coordinating with sound, lighting, and internal team, and ensuring events run smoothly from rundown to final output. I’m used to working in fast-paced environments where timing, teamwork, and clear communication really matter.</p>
+            </div>
+            <div class="about-footer">
+                <a href="https://www.instagram.com/_njell/" target="_blank" class="btn-instagram-profile">📸 Follow me on Instagram: @_njell</a>
             </div>
         </div>
     </section>
 
+    <!-- ====== WORK EXPERIENCE TIMELINE ====== -->
+    <section id="experience">
+        <h2 class="section-title">My <span>Experience</span></h2>
+        <div class="timeline">
+            
+            <!-- Experience 4 (FIXED: Subtitle & Instagram channels matching requested spec) -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span>JUL 2022</span>
+                    <span class="end-date">APRIL 2026</span>
+                </div>
+                <div class="timeline-info">
+                    <h3>Yord Branding & Design Studio</h3>
+                    <h4>As Production Officer & Studio Partner Work</h4>
+                    <ul>
+                        <li>Shot and edited content for social media, commercial, and branding purposes.</li>
+                        <li>Produced engaging visuals with strong storytelling and pacing.</li>
+                        <li>Adapted to different project styles and client requirements.</li>
+                    </ul>
+                    <div class="experience-links">
+                        <a href="https://www.instagram.com/studioyord/" target="_blank" class="btn-experience-ig">Studio Yord Instagram</a>
+                        <a href="https://www.instagram.com/the.designbuffet/" target="_blank" class="btn-experience-ig">The Design Buffet Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 3 (FIXED: rinku.id link insertion) -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span>JAN 2021</span>
+                    <span class="end-date">JUNE 2022</span>
+                </div>
+                <div class="timeline-info">
+                    <h3>RiNKU Social Media Agency</h3>
+                    <h4>Full Time Shooter & Editor</h4>
+                    <ul>
+                        <li>Shot and edited content for social media and digital campaigns.</li>
+                        <li>Edited videos for reels, ads, and brand content.</li>
+                    </ul>
+                    <div class="experience-links">
+                        <a href="https://www.instagram.com/rinku.id/" target="_blank" class="btn-experience-ig">RiNKU Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span>DEC 2020</span>
+                    <span class="end-date">FEB 2025</span>
+                </div>
+                <div class="timeline-info">
+                    <h3>Own a Live Streaming Business</h3>
+                    <h4>Founder & Technical Lead</h4>
+                    <ul>
+                        <li>Experienced in live streaming production and technical setup.</li>
+                        <li>Operate OBS, audio routing, and multi-camera switching.</li>
+                        <li>Manage team coordination during live events.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <span>DEC 2017</span>
+                    <span class="end-date">APRIL 2020</span>
+                </div>
+                <div class="timeline-info">
+                    <h3>Biei Studio</h3>
+                    <h4>Wedding Videography</h4>
+                    <ul>
+                        <li>Handled wedding shoots video on-site.</li>
+                        <li>Edited cinematic wedding videos with storytelling approach.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2 class="section-title">My <span>Portfolio</span></h2>
 
+        <!-- Filters Grid -->
         <div class="category-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn active" data-filter="all">All Works</button>
             <button class="filter-btn" data-filter="beauty">Beauty / FMCG</button>
-            <button class="filter-btn" data-filter="events">Events & Shorts</button>
             <button class="filter-btn" data-filter="architecture">Architecture</button>
-            <button class="filter-btn" data-filter="wedding">Wedding</button>
-            <button class="filter-btn" data-filter="longform">Podcast / Long Form</button>
+            <button class="filter-btn" data-filter="events">Events & Shorts</button>
+            <button class="filter-btn" data-filter="longform">YouTube & Long Form</button>
         </div>
 
         <div class="portfolio-grid">
             
+            <!-- ====== BEAUTY / FMCG (CNF) ====== -->
             <div class="project-card" data-category="beauty">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DC9B6WGhPBB/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">CNF – Beauty / Personal Care</span>
+                    <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
                     <h3 class="project-title">FMCG Campaign Work 1</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="beauty">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C7TsJdnv1z8/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">CNF – Beauty / Personal Care</span>
+                    <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
                     <h3 class="project-title">FMCG Campaign Work 2</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="beauty">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6V7hvPvmoZ/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">CNF – Beauty / Personal Care</span>
+                    <span class="project-category">CNF – Beauty / Personal Care (FMCG)</span>
                     <h3 class="project-title">FMCG Campaign Work 3</h3>
                     <p class="project-description">Role: Editor</p>
                 </div>
             </div>
 
+            <!-- ====== BEAUTY / FMCG (SIMPLE TREND) ====== -->
             <div class="project-card" data-category="beauty">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DCjO_msBW09/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">Simple Trend</span>
-                    <h3 class="project-title">Beauty / Social Content 1</h3>
-                    <p class="project-description">Creative editing optimized for digital brand presence.</p>
+                    <span class="project-category">Simple Trend – Beauty</span>
+                    <h3 class="project-title">Social Content Showcase 1</h3>
+                    <p class="project-description">Optimized portrait visual storytelling for digital presence.</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="beauty">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C6Yim75PSKN/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">Simple Trend</span>
-                    <h3 class="project-title">Beauty / Social Content 2</h3>
-                    <p class="project-description">Social-first video shaping brand campaigns.</p>
+                    <span class="project-category">Simple Trend – Beauty</span>
+                    <h3 class="project-title">Social Content Showcase 2</h3>
+                    <p class="project-description">High impact social pacing development.</p>
                 </div>
             </div>
 
-            <div class="project-card" data-category="events">
-                <div class="embed-container">
-                    <iframe src="https://www.instagram.com/p/DStx93dkQjc/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Kids Event</span>
-                    <h3 class="project-title">Kids Event Project</h3>
-                    <p class="project-description">Role: Shooter & Editor</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="events">
-                <div class="embed-container-shorts">
-                    <iframe src="https://www.youtube.com/embed/reUjfdguJxw" title="RiNKU Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">RiNKU Agency</span>
-                    <h3 class="project-title">Compilation Works Clip 1</h3>
-                    <p class="project-description">Creative cuts and brand portfolio management.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="events">
-                <div class="embed-container-shorts">
-                    <iframe src="https://www.youtube.com/embed/JW1u-tsIBxY" title="RiNKU Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">RiNKU Agency</span>
-                    <h3 class="project-title">Compilation Works Clip 2</h3>
-                    <p class="project-description">Dynamic visual assembly for modern content.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="events">
-                <div class="embed-container-shorts">
-                    <iframe src="https://www.youtube.com/embed/bExckmVJrKc" title="Pet+Vet 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Pet+Vet – IIPE</span>
-                    <h3 class="project-title">Largest Pet Event in Indonesia (Clip 1)</h3>
-                    <p class="project-description">Role: Freelance Shooter & Editor</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="events">
-                <div class="embed-container-shorts">
-                    <iframe src="https://www.youtube.com/embed/Kb5YnBvzJWA" title="Pet+Vet 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Pet+Vet – IIPE</span>
-                    <h3 class="project-title">Largest Pet Event in Indonesia (Clip 2)</h3>
-                    <p class="project-description">Role: Freelance Shooter & Editor</p>
-                </div>
-            </div>
-
+            <!-- ====== ARCHITECTURE (ADDSTONE) ====== -->
             <div class="project-card" data-category="architecture">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/DMPQngJTl0O/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Addstone Project</span>
-                    <h3 class="project-title">Architecture & Material Showcase 1</h3>
+                    <h3 class="project-title">Architecture & Interior 1</h3>
                     <p class="project-description">Role: Shooter & Editor</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="architecture">
-                <div class="embed-container">
+                <div class="embed-container-portrait">
                     <iframe src="https://www.instagram.com/p/C11GZPlPOBj/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">Addstone Project</span>
-                    <h3 class="project-title">Architecture & Interior Showcase 2</h3>
+                    <h3 class="project-title">Architecture & Material 2</h3>
                     <p class="project-description">Role: Shooter & Editor</p>
                 </div>
             </div>
 
-            <div class="project-card" data-category="wedding">
-                <div class="embed-container">
-                    <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="Wedding Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- ====== EVENTS & SHORTS ====== -->
+            <div class="project-card" data-category="events">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/bExckmVJrKc" title="Pet+Vet 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">Wedding Film</span>
-                    <h3 class="project-title">Yogo & Esther Wedding</h3>
-                    <p class="project-description">Role: Freelance Shooter & Editor. Deep emotional timing and cinematography.</p>
+                    <span class="project-category">Pet+Vet – IIPE</span>
+                    <h3 class="project-title">Largest Pet Event (Clip 1)</h3>
+                    <p class="project-description">Role: Freelance Shooter & Editor</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="events">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/Kb5YnBvzJWA" title="Pet+Vet 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Pet+Vet – IIPE</span>
+                    <h3 class="project-title">Largest Pet Event (Clip 2)</h3>
+                    <p class="project-description">Role: Freelance Shooter & Editor</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="events">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.instagram.com/p/DStx93dkQjc/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Kids Event</span>
+                    <h3 class="project-title">Kids Event Highlights</h3>
+                    <p class="project-description">Role: Shooter & Editor</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="events">
+                <div class="embed-container-portrait">
+                    <iframe src="https://www.youtube.com/embed/JW1u-tsIBxY" title="RiNKU Agency compilation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">RiNKU Agency</span>
+                    <h3 class="project-title">Compilation Works (Short)</h3>
+                    <p class="project-description">Structural sequence cut assembly asset.</p>
+                </div>
+            </div>
+
+            <!-- ====== YOUTUBE & LONG FORM VIDEO (LANDSCAPE) ====== -->
+            <div class="project-card" data-category="longform">
+                <div class="embed-container-landscape">
+                    <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="Wedding Cinematic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Wedding – Yogo & Esther</span>
+                    <h3 class="project-title">Wedding Cinematic Film</h3>
+                    <p class="project-description">Role: Freelance Shooter & Editor</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="longform">
-                <div class="embed-container">
+                <div class="embed-container-landscape">
                     <iframe src="https://www.youtube.com/embed/wrVWgoZoHCo?start=16" title="Studio Yord Podcast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <span class="project-category">Podcast - Studio Yord</span>
-                    <h3 class="project-title">Long Form Video Series</h3>
-                    <p class="project-description">Multi-camera talkshow setup and layout orchestration.</p>
+                    <span class="project-category">Podcast – Studio Yord</span>
+                    <h3 class="project-title">Long Form Talkshow Video</h3>
+                    <p class="project-description">Multi-camera panel pacing layout orchestration.</p>
                 </div>
             </div>
 
             <div class="project-card" data-category="longform">
-                <div class="embed-container">
-                    <iframe src="https://www.youtube.com/embed/TFcC1uFq8yA" title="A Roastwork 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="embed-container-landscape">
+                    <iframe src="https://www.youtube.com/embed/TFcC1uFq8yA" title="A Roastwork video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
                     <span class="project-category">A Roastwork</span>
-                    <h3 class="project-title">Long Form Commercial Content (Clip 1)</h3>
-                    <p class="project-description">High pace edits and clarity sequencing.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="longform">
-                <div class="embed-container">
-                    <iframe src="https://www.youtube.com/embed/fA-H79dN_U8?start=977" title="A Roastwork 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <span class="project-category">A Roastwork</span>
-                    <h3 class="project-title">Long Form Video (Clip 2)</h3>
-                    <p class="project-description">Structuring structural layout for multi-cam projects.</p>
+                    <h3 class="project-title">Long Form Commercial Content</h3>
+                    <p class="project-description">High pacing sequencing focus.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Work <span>Experience</span></h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>Studio Yord</h3>
-                <h4>Current Workplace</h4>
-                <p>Ongoing workspace for high-quality production, brand management, and podcast architectures.</p>
-                <a href="https://www.instagram.com/studioyord/" target="_blank" class="ig-channel-btn">Visit Instagram</a>
-            </div>
-            <div class="experience-card">
-                <h3>The Design Buffet</h3>
-                <h4>Video Shooter, Editor & Multimedia Production – Events</h4>
-                <p>Handling live production environments, coordinating lighting, sound crews, multi-cam setups, and digital delivery systems.</p>
-                <a href="https://www.instagram.com/the.designbuffet/" target="_blank" class="ig-channel-btn">Visit Instagram</a>
-            </div>
-            <div class="experience-card">
-                <h3>Freelance Video Editor & Shooter</h3>
-                <h4>Various Brands & agencies</h4>
-                <p>Delivering high-engagement FMCG commercials (CNF), social content architectures (Simple Trend, RiNKU), architecture tours (Addstone), and multi-camera live outputs.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- ====== CONTACT SECTION (MATCHING SCREENSHOT 17.26.52) ====== -->
     <section class="contact" id="contact">
-        <h2>Let's Work Together</h2>
-        <p>Interested in collaborating or hiring for high-paced video production and editing projects? Let's connect.</p>
-        <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="cta-button">Connect via LinkedIn</a>
+        <h2>Let's Create Together</h2>
+        <p>Interested in collaborating or building high-impact cinematic stories? Reach out directly to connect.</p>
+        
+        <div class="contact-info-block">
+            <a href="https://wa.me/62818500015" target="_blank" class="contact-pill">
+                <span>WhatsApp: 0818 5000 15</span>
+            </a>
+            <a href="mailto:hello.njel@gmail.com" class="contact-pill">
+                <span>Email: hello.njel@gmail.com</span>
+            </a>
+        </div>
+
         <div class="social-links">
-            <a href="https://www.instagram.com/studioyord/" target="_blank" class="social-link">Yord</a>
-            <a href="https://www.instagram.com/the.designbuffet/" target="_blank" class="social-link">TDB</a>
-            <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="social-link">In</a>
+            <a href="https://www.instagram.com/_njell/" target="_blank" class="social-link">Instagram (@_njell)</a>
+            <a href="https://www.linkedin.com/in/angelica-lie-837439a5/" target="_blank" class="social-link">LinkedIn Profile</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2026 Angelica Lie. All rights reserved. | Video Editor & Producer Portfolio</p>
+        <p>© 2026 Angelica Lie. All rights reserved. | Professional Video Portfolio</p>
     </footer>
 
     <script>
-        // Category Filter Logic
+        // Portfolio Filtering Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -829,7 +881,7 @@
                 projectCards.forEach(card => {
                     if (filter === 'all' || card.dataset.category === filter) {
                         card.style.display = 'flex';
-                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        card.style.animation = 'fadeInUp 0.4s ease forwards';
                     } else {
                         card.style.display = 'none';
                     }
@@ -837,7 +889,7 @@
             });
         });
 
-        // Smooth scroll for navigation links
+        // Smooth Scrolling Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
@@ -851,16 +903,6 @@
                     });
                 }
             });
-        });
-
-        // Dynamic Navbar Background adjustments
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.9)';
-            }
         });
     </script>
 </body>
